@@ -1,0 +1,44 @@
+html {
+  line-height: 1.5;
+  font-family: 'PT Serif', serif;
+}
+
+body {
+  margin: 0;
+  padding: 32px;
+}
+
+h1 {
+  letter-spacing: 2px;
+  word-spacing: 3px;
+}
+
+code {
+  font-size: 15px;
+  background-color: rgb(245, 245, 245);
+}
+
+.first-h1 {
+  font-size: 48px;
+}
+
+.link:link {
+  color: midnightblue;
+}
+
+.link:visited {
+  color: midnightblue;
+}
+
+.link:hover {
+  background: rgba(58, 58, 255, 0.137);
+}
+
+.link:focus {
+  background: rgba(58, 58, 255, 0.137);
+}
+
+.link:active {
+  background: midnightblue;
+  color: aliceblue;
+}
