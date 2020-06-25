@@ -6,6 +6,7 @@ html {
 body {
   margin: 0;
   padding: 32px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -15,7 +16,7 @@ h1 {
 
 code {
   font-size: 15px;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(230, 230, 230);
 }
 
 .first-h1 {

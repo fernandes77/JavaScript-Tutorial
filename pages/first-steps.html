@@ -16,23 +16,24 @@
     <h2>Variable types</h2>
     <ul>
       <li>
-        Numbers:<br />
+        <strong>Numbers:</strong><br />
         <code>let myAge = 22;</code><br />
       </li>
       <li>
-        Strings:<br />
+        <strong>Strings:</strong><br />
         <code>let myName = "Rodrigo Fernandes";</code>
       </li>
       <li>
-        Booleans:<br />
+        <strong>Booleans:</strong><br />
         <code>let iAmAlive = true;</code>
       </li>
       <li>
-        Arrays:<br />
-        <code>let myNameCharacters = [7, 7, 2, 5, 9];</code>
+        <strong>Arrays:</strong><br />
+        <code>let myNameCharacters = [7, 7, 2, 5, 9];</code><br />
+        Note: you can store different data types, even other arrays.
       </li>
       <li>
-        Objects:<br />
+        <strong>Objects:</strong><br />
         <code>let myInfo = {name: myName, age: myAge, sex: "male"};</code><br />
         To retrieve the name, for example, use<br />
         <code>myInfo.name;</code>.
@@ -43,5 +44,117 @@
       variable/constant.
     </p>
     <h2>Numbers and operators</h2>
+    <ul>
+      <li>
+        <code><strong>toFixed()</strong></code> : Rounds a number to a fixed
+        amount of decimal places.<br />
+        <code>let lotsOfDecimal = 1.766584958675746364;</code><br />
+        <code>let twoDecimalPlaces = lotsOfDecimal.toFixed(2);</code>
+      </li>
+      <li>
+        <code><strong>Number()</strong></code> : Converts a string into a
+        number.<br />
+        <code>myNumber = "256";</code><br />
+        <code>Number(myNumber) + 3;</code><br />
+        The result will be 259.
+      </li>
+      <li>
+        <strong>Operators:</strong><br />
+        <code>+ - * / % and **</code>
+      </li>
+      <li>
+        <strong>Comparison operators:</strong><br />
+        <code>=== !== &lt; &gt; &lt;= and &gt;=</code>
+      </li>
+    </ul>
+    <h1>Useful string methods</h1>
+    <h2>Strings as objects</h2>
+    <p>
+      Most things are objects in JavaScript. A string is one of those things.
+    </p>
+    <ul>
+      <li>
+        <code><strong>length</strong></code> : Retrieves the length of the
+        string.<br />
+        <code>let browserType = "chrome";</code><br />
+        <code>browserType.length;</code>
+      </li>
+      <li>
+        <code><strong>browserType[x]</strong></code> : Retrieves a character in
+        the x position.
+      </li>
+      <li>
+        <code><strong>indexOf()</strong></code> : Finds a substring index inside
+        of the string. If the substring is not found, it returns -1.<br />
+        <code>browserType.indexOf("ome"); // returns 3</code>
+      </li>
+      <li>
+        <code><strong>slice()</strong></code> : Returns a substring based on the
+        positions you feed it.<br />
+        <code>browserType.slice(0,3); // returns "chr"</code><br />
+        <code>browserType.slice(1); // returns "hrome"</code>
+      </li>
+      <li>
+        <code><strong>toLowerCase() toUpperCase()</strong></code> : changes
+        case.<br />
+        <code>let os = "winDOWS";</code><br />
+        <code>os.toLowerCase(); // returns "windows"</code><br />
+        <code>os.toUpperCase(); // returns "WINDOWS"</code>
+      </li>
+      <li>
+        <code><strong>replace()</strong></code> : replaces a substring.<br />
+        <code>browserType.replace("chr", "d"); // returns "dome"</code><br />
+        Note: this does not change the actual value of browserType.
+      </li>
+    </ul>
+    <h1>Arrays</h1>
+    <h2>Useful array methods</h2>
+    <ul>
+      <li>
+        <code><strong>split()</strong></code> : separates a string into
+        substrings and converts them into an array.<br />
+        <code>let myCountries = "Brasil, Portugal, Angola";</code><br />
+        <code>
+          myCountries.split(", "); // returns ["Brasil", "Portugal", "Angola"]
+        </code>
+      </li>
+      <li>
+        <code><strong>join()</strong></code> : does the opposite.<br />
+        <code>let myCities = ["Porto", "Lisboa", "Braga"];</code><br />
+        <code>myCities.join(", "); // returns "Porto, Lisboa, Braga"</code>
+      </li>
+    </ul>
+    <h2>Adding and removing items</h2>
+    <p>
+      All of the methods below alter the actual array itself.
+    </p>
+    <ul>
+      <li>
+        <code><strong>push()</strong></code> : adds an item to the end of the
+        array.<br />
+        <code>let myArray = ["USA", "England", "Spain"];</code><br />
+        <code>
+          myArray.push("France", "Netherlands"); // returns 5, the new length of
+          the array
+        </code>
+      </li>
+      <li>
+        <code><strong>pop()</strong></code> : removes the last item of the
+        array.<br />
+        <code>myArray.pop(); // returns "Netherlands", the removed item</code>
+      </li>
+      <li>
+        <code><strong>unshift()</strong></code> : adds an item to the beginning
+        of the array.<br />
+        <code>
+          myArray.unshift("Canada"); // returns 5, the new length of the array
+        </code>
+      </li>
+      <li>
+        <code><strong>shift()</strong></code> : removes the first item of the
+        array.<br />
+        <code>myArray.shift(); // returns "Canada", the removed item</code>
+      </li>
+    </ul>
   </body>
 </html>
