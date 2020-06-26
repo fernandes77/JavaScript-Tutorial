@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <script src="../script.js"></script>
+    <script src="../script.js" defer></script>
   </head>
   <body>
     <h1>Conditionals and Loops</h1>
@@ -72,16 +72,54 @@
       </li>
       <li>
         <code><strong>while</strong> (condition) { </code><br />
-        <code>// code to run</code><br><br>
-        <code>final-expression</code><br>
+        <code>// code to run</code><br /><br />
+        <code>final-expression</code><br />
         <code>}</code>
       </li>
       <li>
-        <code><strong>do</strong> {</code><br>
-        <code>// code to run</code><br><br>
-        <code>final-expression</code><br>
+        <code><strong>do</strong> {</code><br />
+        <code>// code to run</code><br /><br />
+        <code>final-expression</code><br />
         <code>} <strong>while</strong> (condition);</code>
       </li>
     </ul>
+    <h1>Functions</h1>
+    <h2>Functions versus methods</h2>
+    <p>
+      Functions that are part of objects are called methods.
+    </p>
+    <h2>Custom functions</h2>
+    <code><strong>function name</strong>(parameters) {</code><br />
+    <code>// code to run</code><br />
+    <code>// return something (optional)</code><br />
+    <code>}</code>
+    <h2>Anonymous functions</h2>
+    <p>
+      Anonymous functions are functions that have no name. It is generally used
+      with an event handler.
+    </p>
+    <code>const myButton = document.querySelector("button");</code><br /><br />
+    <code>myButton.onClick = function() {</code><br />
+    <code>alert("hello");</code><br />
+    <code>}</code>
+    <p>
+      You can also assign it to a variable.
+    </p>
+    <code>const myGreeting = function() {</code><br />
+    <code>alert("hello");</code><br />
+    <code>}</code>
+    <h2>Function scope</h2>
+    <p>
+      In JavaScript functions have their own local scope, which can't be used
+      anywhere else. Outside of the functions there is the global scope.
+    </p>
+    <h2>Making a function</h2>
+    <p>
+      Note: if you put the parentheses when you assign the function to an event
+      you will call that function immediately. Do not include the parentheses:
+    </p>
+    <code>btn.onclick = displayMessage;</code><br />
+    <br />
+    <button class="btn">Message</button>
   </body>
 </html>

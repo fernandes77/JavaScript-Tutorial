@@ -43,3 +43,13 @@ code {
   background: midnightblue;
   color: aliceblue;
 }
+
+.msgBox {
+  width: 242px;
+}
+
+.msgBox p {
+  padding-left: 82px;
+  background-position: 25px center;
+  background-repeat: no-repeat;
+}
