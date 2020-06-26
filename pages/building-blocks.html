@@ -121,5 +121,92 @@
     <code>btn.onclick = displayMessage;</code><br />
     <br />
     <button class="btn">Message</button>
+    <br />
+    <h1>Introduction to events</h1>
+    <p>
+      Events are occurrences that happen in the system you are programming,
+      which the system tells you about so you can respond to them in some way if
+      desired.
+    </p>
+    <h2>Event handlers</h2>
+    <p>Some examples are:</p>
+    <ul>
+      <li><strong>btn.onclick</strong>: when the button is clicked;</li>
+      <li>
+        <strong>btn.onfocus</strong>: when the button is focused on with tab;
+      </li>
+      <li>
+        <strong>btn.ondblclick</strong>: when the button is double-clicked;
+      </li>
+      <li><strong>window.onkeyup</strong>: when the UP key is pressed;</li>
+      <li>
+        <strong>btn.onmouseover</strong>: when the mouse pointer hovers over the
+        button.
+      </li>
+    </ul>
+    <h2>addEventListener</h2>
+    <p>
+      The <code><strong>addEventListener()</strong></code> function works like
+      event handlers but has some advantages over them.
+    </p>
+    <ul>
+      <li>
+        You can remove an added listener with
+        <code><strong>removeEventListener()</strong></code
+        >;
+      </li>
+      <li>You can add multiple functions to an event.</li>
+    </ul>
+    <div class="add-event-listener">
+      <p class="ael-paragraph">Click me!</p>
+    </div>
+    <h2>Event objects</h2>
+    <p>
+      You might encounter a parameter specified with a name such as
+      <code>e</code>, <code>evt</code> or <code>event</code>. You can then use
+      <code>event.target.style.backgroundColor</code> instead of a variable
+      created by <code>querySelector</code>.
+    </p>
+    <code><strong>function bgChange</strong>(event) {</code><br />
+    <code>var rndCol =</code><br />
+    <code>
+      "rgb(" + random(255) + "," + random(255) + "," + random(255) + ")";
+    </code>
+    <br />
+    <code>event.target.style.backgroundColor = rndCol;</code><br />
+    <code>}</code>
+    <br /><br />
+    <code>square.addEventListener("click", bgChange);</code>
+    <h2>Preventing default behavior</h2>
+    <p>
+      The <strong>preventDefault()</strong> function prevents the browser from
+      doing something by default when an event occurs.<br />
+      You can use it in a form to validate inputs:
+    </p>
+    <form>
+      <div>
+        <label for="fname">First name: </label>
+        <input id="fname" type="text" />
+      </div>
+      <div>
+        <label for="lname">Last name: </label>
+        <input id="lname" type="text" />
+      </div>
+      <div>
+        <input id="submit" type="submit" />
+      </div>
+    </form>
+    <p class="form-paragraph"></p>
+    <h2>Event bubbling</h2>
+    <p>
+      When an element and it's parent element have event listeners and the
+      child's event occurs, both event listeners will be activated.<br />
+      To prevent this, use <strong>stopPropagation()</strong> so that only the
+      child's event listener is activated.
+    </p>
+    <code>video.onclick = function(e) {</code><br />
+    <code>e.stopPropagation();</code><br />
+    <code>video.play();</code><br />
+    <code>};</code>
   </body>
 </html>
