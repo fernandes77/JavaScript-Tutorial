@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../scripts/objects.js" defer></script>
+    <title>Objects</title>
+  </head>
+  <body>
+    <h1>Objects basics</h1>
+    <p>
+      An object is a collection of related data and/or functionality.
+    </p>
+    <code>const person = {};</code>
+    <h2>Dot notation</h2>
+    <p>
+      You can access different properties/data/functions with dot notation.
+    </p>
+    <code>person.name</code><br />
+    <code>person.interests[1]</code><br />
+    <code>person.bio()</code><br />
+    <h2>Bracket notation</h2>
+    <p>
+      You can also access them with bracket notation. Just put the property in
+      quotes.
+    </p>
+    <code>person["age"]</code><br />
+    <code>person["name"]["first"]</code><br />
+    <p>
+      Bracket notation allows you to create new members.
+    </p>
+    <code>person["eyes"] = "hazel";</code><br />
+    <p>
+      And they can have dynamic member names too.
+    </p>
+    <code>person[inputName] = inputValue;</code>
+    <h2>What is "this"?</h2>
+    <p>
+      The <strong>this</strong> keyword refers to the current object the code is
+      being written inside.
+    </p>
+    <code>greeting: function() {</code><br />
+    <code>alert('Hi! I\'m ' + <strong>this</strong>.name.first + '.');</code>
+    <br />
+    <code>}</code>
+  </body>
+</html>

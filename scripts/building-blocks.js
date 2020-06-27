@@ -1,20 +1,3 @@
-let myAge = 22;
-let myName = "Rodrigo Fernandes";
-let iAmAlive = true;
-let myNameCharacters = [7, 7, 2, 5, 9];
-let myInfo = { name: myName, age: myAge, sex: "male" };
-
-let lotsOfDecimal = 1.766584958675746364;
-let twoDecimalPlaces = lotsOfDecimal.toFixed(2);
-let myNumber = "256";
-
-let browserType = "chrome";
-let os = "winDOWS";
-
-let myCountries = "Brasil, Portugal, Angola";
-let myCities = ["Porto", "Lisboa", "Braga"];
-let myArray = ["USA", "England", "Spain"];
-
 const myGreeting = function () {
   alert("hello");
 };
@@ -71,14 +54,14 @@ function bgChange(event) {
 
 square.addEventListener("click", bgChange);
 
-const form = document.querySelector('form');
-const fname = document.getElementById('fname');
-const lname = document.getElementById('lname');
-const para = document.querySelector('.form-paragraph');
+const form = document.querySelector("form");
+const fname = document.getElementById("fname");
+const lname = document.getElementById("lname");
+const para = document.querySelector(".form-paragraph");
 
-form.onsubmit = function(e) {
-  if (fname.value === '' || lname.value === '') {
+form.onsubmit = function (e) {
+  if (fname.value === "" || lname.value === "") {
     e.preventDefault();
-    para.textContent = 'You need to fill in both names!';
+    para.textContent = "You need to fill in both names!";
   }
-}
+};
