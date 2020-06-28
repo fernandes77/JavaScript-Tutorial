@@ -119,5 +119,80 @@
       the constructor only contains the property definitions, and the methods
       are split off into separate blocks.
     </p>
+    <h1>Inheritance</h1>
+    <p>
+      This article shows how to create "child" object classes (constructors)
+      that inherit features from their "parent" classes.
+    </p>
+    <h2>Setting prototype and constructor inheritance</h2>
+    <p>
+      Creating a <strong>Teacher</strong> object from the
+      <strong>Citizen</strong> object:
+    </p>
+    <code>function Teacher(first, last, age, gender, interests, subject) {</code
+    ><br />
+    <code>Citizen.call(this, first, last, age, gender, interests);</code><br />
+    <code>this.subject = subject;</code><br />
+    <code>}</code><br />
+    <p>
+      Now, to pass the prototype functions we use the
+      <strong>create</strong> function:
+    </p>
+    <code>Teacher.prototype = Object.create(Citizen.prototype);</code><br />
+    <p>
+      And now, to set the prototype's constructor as equal to Teacher:
+    </p>
+    <code>
+      Object.defineProperty(Teacher.prototype, 'constructor', {
+    </code>
+    <br />
+    <code>value: Teacher, </code><br />
+    <code>enumerable: false,</code><br />
+    <code>writable: true </code><br />
+    <code>});</code><br />
+    <p>
+      To give Teacher a new function, just use
+      <strong>Teacher.prototype</strong>.
+    </p>
+    <h2>ECMAScript 2015 classes</h2>
+    <p>
+      ECMAScript 2015 introduces class syntax to JavaScript as a way to write
+      reusable classes using easier, cleaner syntax, which is more similar to
+      classes in C++ or Java.
+    </p>
+    <code>class Citizen {</code><br />
+    <code>constructor(first, last, age, gender, interests) {</code><br />
+    <code>// properties</code><br />
+    <code>}</code>
+    <br />
+    <br />
+    <code>// methods</code><br />
+    <code>}</code>
+    <p>
+      And this is how to pass it on to Teacher. We use
+      <strong>super()</strong> to define <strong>this</strong>.
+    </p>
+    <code>class Teacher <strong>extends</strong> Citizen {</code><br />
+    <code>
+      constructor(first, last, age, gender, interests, subject, grade) {
+    </code>
+    <br />
+    <code>super(first, last, age, gender, interests);</code><br />
+    <code>this.subject = subject;</code><br />
+    <code>this.grade = grade;</code><br />
+    <code>}</code><br />
+    <code>}</code><br />
+    <h2>Getters and setters</h2>
+    <p>
+      There may be times when we want to change the values of an attribute in
+      the classes we create or we don't know what the final value of an
+      attribute will be. We can handle such situations with getters and setters.
+    </p>
+    <code>get subject() {</code><br />
+    <code>return this._subject;</code><br />
+    <code>}</code><br /><br />
+    <code>set subject(newSubject) {</code><br>
+    <code>this._subject = newSubject;</code><br>
+    <code>}</code>
   </body>
 </html>
