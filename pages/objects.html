@@ -31,8 +31,9 @@
     </p>
     <code>person["age"]</code><br />
     <code>person["name"]["first"]</code><br />
+    <h2>Creating new members</h2>
     <p>
-      Bracket notation allows you to create new members.
+      You can create new members inside an object.
     </p>
     <code>person["eyes"] = "hazel";</code><br />
     <p>
@@ -48,5 +49,34 @@
     <code>alert('Hi! I\'m ' + <strong>this</strong>.name.first + '.');</code>
     <br />
     <code>}</code>
+    <h1>Object-oriented JavaScript</h1>
+    <p>
+      Object-oriented programming is modeling real world things using objects
+      and their data/methods.
+    </p>
+    <h2>Constructors and object instances</h2>
+    <p>
+      Constructor functions define the structure of an object.
+    </p>
+    <code>function <strong>Person</strong>(name) {</code><br />
+    <code>this.name = name;</code><br />
+    <code>this.greeting = function() {</code><br />
+    <code>alert("Hi, my name is " + this.name + ".");</code><br />
+    <code>}</code><br />
+    <code>}</code><br />
+    <p>
+      This is JavaScript's version of a class.
+    </p>
+    <code>let person1 = <strong>new</strong> Person("Rodrigo");</code><br />
+    <code>let person2 = <strong>new</strong> Person("Thiago");</code><br />
+    <p>The <strong>new</strong> keyword creates a new object.</p>
+    <h2>Other ways to create object instances</h2>
+    <ul>
+      <li><strong>Object()</strong>: creates a new empty object;</li>
+      <li>
+        <strong>create()</strong>: creates an object with the same
+        characteristics as another object.
+      </li>
+    </ul>
   </body>
 </html>
