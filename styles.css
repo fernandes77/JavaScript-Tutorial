@@ -65,3 +65,37 @@ code {
   color: white;
   text-align: center;
 }
+
+.example h1, .example h2 {
+  font-family: 'Faster One', cursive;
+}
+
+.example h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.example-header p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.example-section article {
+  width: 33%;
+  float: left;
+}
+
+.example-section p {
+  margin: 5px 0;
+}
+
+.example-section ul {
+  margin-top: 0;
+}
+
+.example h2 {
+  font-size: 2.5rem;
+  letter-spacing: -5px;
+  margin-bottom: 10px;
+}

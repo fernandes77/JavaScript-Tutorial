@@ -8,6 +8,10 @@
       href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Faster+One"
+      rel="stylesheet"
+    />
     <script src="../scripts/objects.js" defer></script>
     <title>Objects</title>
   </head>
@@ -191,8 +195,47 @@
     <code>get subject() {</code><br />
     <code>return this._subject;</code><br />
     <code>}</code><br /><br />
-    <code>set subject(newSubject) {</code><br>
-    <code>this._subject = newSubject;</code><br>
+    <code>set subject(newSubject) {</code><br />
+    <code>this._subject = newSubject;</code><br />
     <code>}</code>
+    <h1>Working with JSON</h1>
+    <p>
+      JavaScript Object Notation (JSON) is a standard text-based format for
+      representing structured data based on JavaScript object syntax.
+    </p>
+    <h2>JSON structure</h2>
+    <p>
+      A JSON structure resembles an object structure. You can use dot notation
+      to access different properties within it.
+    </p>
+    <code>superHeroes.homeTown</code><br />
+    <code>superHeroes["members"][1]["powers"][2]</code><br />
+    <p>Note: an <strong>array</strong> is also a valid JSON structure.</p>
+    <h2>Other notes</h2>
+    <ul>
+      <li>JSON contains only data, no methods;</li>
+      <li>JSON requires double quotes around strings and property names;</li>
+      <li>A single string or number would be a valid JSON object;</li>
+      <li>
+        JSON requires the properties to be quoted, unlike in JavaScript syntax.
+      </li>
+    </ul>
+    <h2>An example</h2>
+    <div class="example">
+      <header class="example-header"></header>
+
+      <section class="example-section"></section>
+    </div>
+    <h2>Converting between objects and text</h2>
+    <ul>
+      <li>
+        <strong>parse()</strong>: accepts a JSON string and converts it to a
+        JavaScript object;
+      </li>
+      <li>
+        <strong>stringify()</strong>: accepts an object and returns the
+        equivalent JSON string form.
+      </li>
+    </ul>
   </body>
 </html>
