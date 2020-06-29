@@ -159,13 +159,77 @@
       The <strong>requestAnimationFrame()</strong> function is used for creating
       animations that run efficiently in the browser.
     </p>
-    <code>function draw() {</code><br>
-    <code>// Drawing code goes here</code><br>
-    <code>requestAnimationFrame(draw);</code><br>
-    <code>}</code><br>
-    <code>draw();</code><br>
+    <code>function draw() {</code><br />
+    <code>// Drawing code goes here</code><br />
+    <code>requestAnimationFrame(draw);</code><br />
+    <code>}</code><br />
+    <code>draw();</code><br />
     <p>
       You can cancel an animation using <strong>cancelAnimationFrame()</strong>.
     </p>
+    <h1>Graceful asynchronous programming with promises</h1>
+    <p>
+      <strong>Promises</strong> are a comparatively new feature of the
+      JavaScript language that allow you to defer further actions until after a
+      previous action has completed, or respond to its failure.
+    </p>
+    <h2>The trouble with callbacks</h2>
+    <ul>
+      <li>Callbacks are less efficient than promises;</li>
+      <li>Callbacks have bad code readability. They create callback hell.</li>
+    </ul>
+    <p>
+      Promises are much easier to write, parse and run.
+    </p>
+    <code>chooseToppings()</code><br />
+    <code>.then(toppings => placeOrder(toppings))</code><br />
+    <code>.then(order => collectOrder(order))</code><br />
+    <code>.then(pizza => eatPizza(pizza))</code><br />
+    <code>.catch(failureCallback);</code><br />
+    <h2>Promise terminology recap</h2>
+    <ul>
+      <li>
+        When a promise is created, it is neither in a success or failure state.
+        It is said to be pending.
+      </li>
+      <li>
+        When a promise returns, it is said to be resolved.
+        <ul>
+          <li>
+            A successfully resolved promise is said to be fulfilled. It returns
+            a value, which can be accessed by chaining a
+            <strong>.then()</strong> block onto the end of the promise chain.
+          </li>
+          <li>
+            An unsuccessful resolved promise is said to be rejected. It returns
+            an error message stating why the promise was rejected. Use
+            <strong>.catch()</strong> to access this error message.
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h2>Running code in response to multiple promises fulfilling</h2>
+    <p>
+      The <strong>Promise.all()</strong> function takes an array of promises and
+      returns one promise that is fulfilled if all of them are fulfilled.
+    </p>
+    <code>Promise.all([a, b, c]).then(values => {</code><br />
+    <code>// some code</code><br />
+    <code>});</code><br />
+    <p>
+      In modern browsers, there's the <strong>.finally()</strong> method. This
+      allows you to execute code after the promise chain ends, like displaying a
+      message "request ended".
+    </p>
+    <h2>Building your own custom promises</h2>
+    <p>
+      It is possible to build your own promises using the
+      <strong>Promise()</strong> constructor.
+    </p>
+    <code>let timeoutPromise = new Promise((resolve, reject) => {</code><br />
+    <code>setTimeout(function(){</code><br />
+    <code>resolve('Success!');</code><br />
+    <code>}, 2000);</code><br />
+    <code>});</code><br />
   </body>
 </html>
