@@ -231,5 +231,59 @@
     <code>resolve('Success!');</code><br />
     <code>}, 2000);</code><br />
     <code>});</code><br />
+    <h1>Async and await</h1>
+    <p>
+      The <strong>async</strong> functions and the
+      <strong>await</strong> keyword make async code easier to write and read.
+    </p>
+    <h2>The basics of async and await</h2>
+    <p>
+      Using <strong>async</strong> before a function means that that function
+      will return a promise. You can then use <strong>.then()</strong> with it.
+    </p>
+    <p>
+      The real advantage of <strong>async</strong> functions is when you combine
+      it with the <strong>await</strong> keyword. It pauses the code until the
+      promise fulfills. In the meantime, other code is executed.
+    </p>
+    <code>async function myFetch() {</code><br />
+    <code>let response = await fetch('coffee.jpg');</code><br /><br />
+    <code>if (!response.ok) {</code><br />
+    <code>throw new Error(`HTTP error! status: ${response.status}`);</code
+    ><br />
+    <code>} else {</code><br />
+    <code>let myBlob = await response.blob();</code><br /><br />
+    <code>let objectURL = URL.createObjectURL(myBlob);</code><br />
+    <code>let image = document.createElement('img');</code><br />
+    <code>image.src = objectURL;</code><br />
+    <code>document.body.appendChild(image);</code><br />
+    <code>}</code><br />
+    <code>}</code><br /><br />
+    <code>myFetch()</code><br />
+    <code>.catch(e => {</code><br />
+    <code>
+      console.log('There has been a problem with your fetch operation: ' +
+      e.message);
+    </code>
+    <br />
+    <code>});</code><br />
+    <p>
+      This gets rid of all the .then() methods.
+    </p>
+    <h2>The downsides of async and await</h2>
+    <ul>
+      <li>
+        Async/await makes your code look synchronous. The await keyword blocks
+        execution of all the code that follows until the promise fulfills;
+      </li>
+      <li>
+        You have to wrap your awaited promises inside an async function.
+      </li>
+    </ul>
+    <h2>Async/await class methods</h2>
+    <p>
+      You can even add async in front of class/object methods to make them
+      return promises, and await promises inside them.
+    </p>
   </body>
 </html>
