@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous JavaScript</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../scripts/asyncronous.js" defer></script>
+  </head>
+  <body>
+    <h1>General asynchronous programming concepts</h1>
+    <p>
+      If you have two tasks in your code - task A and task B - and you run the
+      code, you will have to wait for task A to be completed before task B
+      starts. This is called synchronous programming. Asynchronous programming
+      allows tasks A and B to run simoutaneously.
+    </p>
+    <h2>Blocking code</h2>
+    <p>
+      When a web app executes a big chunk of code and the browser freezes, it
+      means the code is being <strong>blocked</strong>. JavaScript is a
+      single-threaded language, which means it runs it's code from top to
+      bottom.
+    </p>
+    <h2>Threads</h2>
+    <p>
+      A <strong>thread</strong> is a sequence of tasks in which only one task
+      can be done at a time.
+    </p>
+    <h2>Asynchronous code</h2>
+    <p>
+      Asynchronous code is very useful for single-threaded languages. Callbacks
+      and promises allow the browser to perform tasks without blocking the flow
+      of a thread.
+    </p>
+    <h1>Introducing asynchronous JavaScript</h1>
+    <h2>Synchronous JavaScript</h2>
+    <p>
+      In synchronous JavaScript you can only complete one task at a time. This
+      means that if you have a large function with a lot of tasks the last tasks
+      will take a long time to be completed.
+    </p>
+    <h2>Asynchronous JavaScript</h2>
+    <p>
+      If you tried to fetch an image and display it immediately afterwards:
+    </p>
+    <code>let response = fetch('myImage.png');</code><br />
+    <code>let blob = response.blob();</code><br />
+    <code>// display your image blob in the UI somehow</code><br />
+    <p>
+      It wouldn't work. The image takes a bit of time to be fetched. Instead,
+      you need your code to wait until the response is returned before it tries
+      to do anything else to it.
+    </p>
+    <h2>Async callbacks</h2>
+    <p>
+      Async <strong>callbacks</strong> are functions that are passed as
+      arguments inside another function. They are used when we need to wait for
+      a task to be completed before doing another task that depends on the first
+      one.
+    </p>
+    <code>btn.addEventListener('click', () => {</code><br />
+    <code>alert('You clicked me!');</code><br />
+    <code>let pElem = document.createElement('p');</code><br />
+    <code>pElem.textContent = 'This is a newly-added paragraph.';</code><br />
+    <code>document.body.appendChild(pElem);</code><br />
+    <code>});</code><br />
+    <h2>Promises</h2>
+    <p>
+      <strong>Promises</strong> are a newer, more modern and more efficient way
+      of doing async programming. The promise is an object representing the
+      completion or failure of the async operation.
+    </p>
+    <code>fetch('products.json').then(function(response) {</code><br />
+    <code>return response.json();</code><br />
+    <code>}).then(function(json) {</code><br />
+    <code>products = json;</code><br />
+    <code>initialize();</code><br />
+    <code>}).catch(function(err) {</code><br />
+    <code>console.log('Fetch problem: ' + err.message);</code><br />
+    <code>});</code><br />
+    <ul>
+      <li>Promises avoid "callback hells";</li>
+      <li>
+        Promise callbacks are always called in the strict order they are placed
+        in;
+      </li>
+      <li>All errors are handled by <strong>catch()</strong>;</li>
+      <li>
+        Promises avoid losing control of how the function will be executed.
+      </li>
+    </ul>
+  </body>
+</html>
