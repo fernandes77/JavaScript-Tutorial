@@ -94,5 +94,78 @@
         Promises avoid losing control of how the function will be executed.
       </li>
     </ul>
+    <h1>Cooperative asynchronous JavaScript: timeouts and intervals</h1>
+    <h2>Introduction</h2>
+    <p>
+      Throughout the years, JavaScript has offered some functions that lets
+      asynchronous code be executed after an interval of time.
+    </p>
+    <ul>
+      <li>
+        <strong>setTimeout()</strong>: execute once after a specified time has
+        elapsed;
+      </li>
+      <li>
+        <strong>setInterval()</strong>: execute repeatedly with a fixed time
+        delay between each call;
+      </li>
+      <li>
+        <strong>requestAnimationFrame()</strong>: executes a specified block of
+        code before the browser next repaints the display, allowing an animation
+        to be run at a suitable framerate regardless of the environment it is
+        being run in.
+      </li>
+    </ul>
+    <h2>Set timeout</h2>
+    <p>
+      The <strong>setTimeout()</strong> function accepts some parameters: a
+      callback function, a time interval in milliseconds and arguments for the
+      function, if needed.<br />
+      Use <strong>clearTimeout()</strong> to cancel a
+      <strong>setTimeout()</strong> function before it runs.
+    </p>
+    <code>let myGreeting = setTimeout(function sayHi() {</code><br />
+    <code>alert('Hello, Mr. Universe!');</code><br />
+    <code>}, 2000)</code><br />
+    <h2>Set interval</h2>
+    <p>
+      The <strong>setInterval()</strong> function accepts some parameters: a
+      callback function, a time interval (for the function to loop) in
+      milliseconds and arguments for the function, if needed.<br />
+      Use <strong>clearInterval()</strong> to stop the function from looping.
+    </p>
+    <code>const createClock = setInterval(function displayTime() {</code><br />
+    <code>let date = new Date();</code><br />
+    <code>let time = date.toLocaleTimeString();</code><br />
+    <code>document.getElementById('demo').textContent = time;</code><br />
+    <code>}, 1000)</code><br />
+    <h2>Things to keep in mind about set timeout and set interval</h2>
+    <ul>
+      <li>
+        You can use a recursive set timeout instead of set interval. This will
+        guarantee the same delay between executions;
+      </li>
+      <li>
+        You can set a timeout with a time of 0. This will make the main thread
+        run before your callback function runs;
+      </li>
+      <li>
+        You can use clear timeout for set intervals, and vice-versa. For
+        consistency just use the correct ones.
+      </li>
+    </ul>
+    <h2>Request animation frame</h2>
+    <p>
+      The <strong>requestAnimationFrame()</strong> function is used for creating
+      animations that run efficiently in the browser.
+    </p>
+    <code>function draw() {</code><br>
+    <code>// Drawing code goes here</code><br>
+    <code>requestAnimationFrame(draw);</code><br>
+    <code>}</code><br>
+    <code>draw();</code><br>
+    <p>
+      You can cancel an animation using <strong>cancelAnimationFrame()</strong>.
+    </p>
   </body>
 </html>
