@@ -285,5 +285,106 @@
       You can even add async in front of class/object methods to make them
       return promises, and await promises inside them.
     </p>
+    <h1>Choosing the right approach</h1>
+    <h2>Asynchronous callbacks</h2>
+    <p>Useful for:</p>
+    <ul>
+      <li>A repeating operation;</li>
+      <li>Multiple sequential operations.</li>
+    </ul>
+    <p>Pitfalls:</p>
+    <ul>
+      <li>Callback hells;</li>
+      <li>
+        Failure callbacks need to be called once for each level of nesting;
+      </li>
+      <li>Async callbacks aren't very graceful;</li>
+      <li>
+        Async callbacks are not always called in the strict order they are
+        placed in the event queue;
+      </li>
+      <li>
+        Async callbacks lose full control of how the function will be executed
+        when passed to a third-party library.
+      </li>
+    </ul>
+    <h2>setTimeout()</h2>
+    <p>Useful for:</p>
+    <ul>
+      <li>A single delayed operation;</li>
+      <li>A repeating operation;</li>
+      <li>Multiple sequential operations.</li>
+    </ul>
+    <p>Pitfalls:</p>
+    <ul>
+      <li>
+        Recursive setTimeout() guarantees at least the specified amount of time
+        will elapse between the executions.
+      </li>
+    </ul>
+    <h2>setInterval()</h2>
+    <p>Useful for:</p>
+    <ul>
+      <li>A repeating operation.</li>
+    </ul>
+    <p>Pitfalls:</p>
+    <ul>
+      <li>
+        The frame rate isn't optimized for the system the animation is running
+        on, and can be somewhat inefficient.
+      </li>
+    </ul>
+    <h2>requestAnimationFrame()</h2>
+    <p>Useful for:</p>
+    <ul>
+      <li>A repeating operation.</li>
+    </ul>
+    <p>Pitfalls:</p>
+    <ul>
+      <li>
+        You can't choose a specific framerate.
+      </li>
+    </ul>
+    <h2>Promises</h2>
+    <p>Useful for:</p>
+    <ul>
+      <li>Multiple sequential operations.</li>
+    </ul>
+    <p>Pitfalls:</p>
+    <ul>
+      <li>
+        Promise chains can be complex and hard to parse, but not as hard as
+        callbacks.
+      </li>
+    </ul>
+    <h2>Promise.all()</h2>
+    <p>Useful for:</p>
+    <ul>
+      <li>Multiple simultaneous operations.</li>
+    </ul>
+    <p>Pitfalls:</p>
+    <ul>
+      <li>
+        If a Promise.all() rejects, then one or more of the promises you are
+        feeding into it inside its array parameter must be rejecting. You need
+        to check each one to see what they returned.
+      </li>
+    </ul>
+    <h2>Async/await</h2>
+    <p>Useful for:</p>
+    <ul>
+      <li>Multiple sequential operations;</li>
+      <li>Multiple simultaneous operations.</li>
+    </ul>
+    <p>Pitfalls:</p>
+    <ul>
+      <li>
+        You can't use the await operator inside a non-async function, or in the
+        top level context of your code;
+      </li>
+      <li>
+        Browser support for async/await is not as good as that for promises.
+      </li>
+    </ul>
   </body>
 </html>
