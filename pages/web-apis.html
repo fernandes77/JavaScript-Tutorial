@@ -88,10 +88,80 @@
     </ul>
     <h2>My shopping list</h2>
     <label for="item">Enter a new item:</label>
-    <input type="text" name="item" id="item">
+    <input type="text" name="item" id="item" />
     <button class="add-item">Add item</button>
-    <ul class="item-list">
-      
+    <ul class="item-list"></ul>
+    <h1>Fetching data from the server</h1>
+    <p>
+      Another very common task in modern websites and applications is retrieving
+      individual data items from the server to update sections of a webpage
+      without having to load an entire new page.
+    </p>
+    <h2>What is the problem here?</h2>
+    <p>
+      Originally page loading on the web was simple. You'd send a request to a
+      server and if everything was normal, your webpage would be updated.<br />
+      The trouble with this model is that whenever you want to update any part
+      of the page you've got to load the entire page again.<br />
+      This led to the creation of APIs like XMLHttpRequest or — more recently —
+      the Fetch API.
+    </p>
+    <h2>A basic Ajax request</h2>
+    <ul>
+      <li>
+        XHR request:
+        <ol>
+          <li>
+            Create a new request object;<br />
+            <code>let request = new XMLHttpRequest();</code>
+          </li>
+          <li>
+            Use the <strong>open()</strong> method to specify the method and the
+            URL;<br />
+            <code>request.open('GET', url);</code>
+          </li>
+          <li>
+            Set the response type you are expecting;<br />
+            <code>request.responseType = 'text';</code>
+          </li>
+          <li>
+            Use the <strong>onload()</strong> event handler. The response will
+            be available at <strong>request.response</strong>;<br />
+            <code>request.onload = function() {</code><br />
+            <code>poemDisplay.textContent = request.response;</code><br />
+            <code>};</code>
+          </li>
+          <li>
+            Send the request with the <strong>send()</strong> method.<br />
+            <code>request.send();</code>
+          </li>
+        </ol>
+      </li>
+      <li>
+        Fetch:
+        <ol>
+          <li>
+            Use the <strong>fetch()</strong> function;<br />
+            <code>fetch(url)</code>
+          </li>
+          <li>
+            Use <strong>.then()</strong> to set the response type;<br />
+            <code>.then(function(response) {</code><br />
+            <code>response.text()</code>
+          </li>
+          <li>
+            Use <strong>.then()</strong> again to do something with the text.<br />
+            <code>.then(function(text) {</code><br />
+            <code>poemDisplay.textContent = text;</code><br />
+            <code>});</code><br />
+            <code>}); // closing off everything</code>
+          </li>
+          <li>
+            You can also use <strong>.catch()</strong> at the end to handle
+            failed attempts.
+          </li>
+        </ol>
+      </li>
     </ul>
   </body>
 </html>
