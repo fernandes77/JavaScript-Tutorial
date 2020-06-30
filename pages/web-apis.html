@@ -43,7 +43,7 @@
       </li>
       <li>
         APIs have entry points. For the DOM API it is the
-        <strong>document</strong> object. For the Web Audio API it is the
+        <strong>Document</strong> object. For the Web Audio API it is the
         <strong>AudioContext</strong> object;
       </li>
       <li>
@@ -51,6 +51,47 @@
         handlers;
       </li>
       <li>APIs have some additional security mechanisms in place.</li>
+    </ul>
+    <h1>Manipulating documents</h1>
+    <p>
+      When writing web pages and apps, one of the most common things you'll want
+      to do is manipulate the document structure in some way. This is usually
+      done by using the Document Object Model (DOM), a set of APIs for
+      controlling HTML and styling information.
+    </p>
+    <h2>The important parts of a web browser</h2>
+    <ul>
+      <li>
+        The window is the browser tab that a web page is loaded into; this is
+        represented in JavaScript by the <strong>Window</strong> object;
+      </li>
+      <li>
+        The navigator represents the state and identity of the browser (i.e. the
+        user-agent) as it exists on the web. In JavaScript, this is represented
+        by the <strong>Navigator</strong> object.
+      </li>
+      <li>
+        The document (represented by the DOM in browsers) is the actual page
+        loaded into the window, and is represented in JavaScript by the
+        <strong>Document</strong> object.
+      </li>
+    </ul>
+    <h2>The document object model</h2>
+    <p>Each one of the elements in the html tree is called a node.</p>
+    <ul>
+      <li>Root node: the html node;</li>
+      <li>Child node: a node directly inside another node;</li>
+      <li>Descendant node: a node anywhere inside another node;</li>
+      <li>Parent node: a node with another node inside it;</li>
+      <li>Sibling nodes: nodes that sit on the same level in the node tree;</li>
+      <li>Text node: a node that contains text.</li>
+    </ul>
+    <h2>My shopping list</h2>
+    <label for="item">Enter a new item:</label>
+    <input type="text" name="item" id="item">
+    <button class="add-item">Add item</button>
+    <ul class="item-list">
+      
     </ul>
   </body>
 </html>
