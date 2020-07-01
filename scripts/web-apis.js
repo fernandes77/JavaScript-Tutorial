@@ -23,3 +23,5 @@ function addListItem() {
 }
 
 btn.addEventListener("click", addListItem);
+
+localStorage.setItem("name", "Rodrigo");

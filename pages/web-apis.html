@@ -188,5 +188,61 @@
       <li>Request data from the API;</li>
       <li>Display the data.</li>
     </ol>
+    <h1>Client-side storage</h1>
+    <p>
+      Modern web browsers support a number of ways for web sites to store data
+      on the user's computer — with the user's permission — then retrieve it
+      when necessary.
+    </p>
+    <h2>Client-side storage?</h2>
+    <p>
+      It is useful for:
+    </p>
+    <ul>
+      <li>Personalizing site preferences;</li>
+      <li>Continuing previous site activity;</li>
+      <li>Site is quicker and usable without an internet connection;</li>
+      <li>Saving documents for use offline.</li>
+    </ul>
+    <p>
+      There are three ways to have local storage:
+    </p>
+    <ul>
+      <li>Cookies: old-fashioned, shouldn't be used anymore;</li>
+      <li>
+        Web storage and IndexedDB: the former for small pieces of data, the
+        latter for bigger data;
+      </li>
+      <li>Cache API: very modern but has small browser support.</li>
+    </ul>
+    <h2>Storing simple data - web storage</h2>
+    <p>
+      All of the local web storage is stored in two objects:
+      <strong>localStorage</strong> and <strong>sessionStorage</strong>.
+    </p>
+    <ul>
+      <li>
+        localStorage<strong>.setItem("name", "Rodrigo")</strong>;<br />
+        Stores an item.
+      </li>
+      <li>
+        localStorage<strong>.getItem("name")</strong>;<br />
+        Returns an item.
+      </li>
+      <li>
+        localStorage<strong>.removeItem("name")</strong>;<br />
+        Removes an item.
+      </li>
+    </ul>
+    <p>
+      There is one local storage for each domain.
+    </p>
+    <h2>Storing complex data - IndexedDB</h2>
+    <p>
+      The IndexedDB API (sometimes abbreviated IDB) is a complete database
+      system available in the browser in which you can store complex related
+      data. You can store videos, images, and pretty much anything else in an
+      IndexedDB instance.
+    </p>
   </body>
 </html>
